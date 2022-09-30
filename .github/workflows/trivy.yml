@@ -17,7 +17,7 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  trivy:
     permissions:
       contents: read # for actions/checkout to fetch code
       security-events: write # for github/codeql-action/upload-sarif to upload SARIF results
@@ -31,7 +31,7 @@ jobs:
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@0.7.1
         with:
-          image-ref: 'https://hub.docker.com/layers/sudarsana/hrmsapp'
+          image-ref: 'https://registry.hub.docker.com/repositories/sudarsana/hrmsapp'
           format: 'template'
           template: '@/contrib/sarif.tpl'
           output: 'trivy-results.sarif'
