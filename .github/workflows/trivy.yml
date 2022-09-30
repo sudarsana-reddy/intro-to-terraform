@@ -27,11 +27,15 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        
+      - name: docker login
+        run: |
+          docker login -u ${{ secrets.DOCKER_REGISTRY_USER }} -p ${{ secrets.DOCKER_REGISTRY_TOKEN }} registry-1.docker.io
     
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@0.7.1
         with:
-          image-ref: 'https://registry.hub.docker.com/repositories/sudarsana/hrmsapp'
+          image-ref: 'sudarsana/hrmsapp:latest'
           format: 'template'
           template: '@/contrib/sarif.tpl'
           output: 'trivy-results.sarif'
