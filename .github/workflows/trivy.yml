@@ -30,7 +30,7 @@ jobs:
         
       - name: docker login
         run: |
-          docker login -u ${{ secrets.DOCKER_REGISTRY_USER }} -p ${{ secrets.DOCKER_REGISTRY_TOKEN }} registry-1.docker.io
+          docker login -u ${{ secrets.DOCKER_REGISTRY_USER }} -p ${{ secrets.DOCKER_REGISTRY_TOKEN }} registry-1.docker.io/v1
     
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@0.7.1
