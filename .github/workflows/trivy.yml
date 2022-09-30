@@ -31,7 +31,7 @@ jobs:
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@0.7.1
         with:
-          image-ref: 'registry-1.docker.io/sudarsana/hrmsapp:latest'
+          image-ref: 'https://hub.docker.com/layers/sudarsana/hrmsapp'
           format: 'template'
           template: '@/contrib/sarif.tpl'
           output: 'trivy-results.sarif'
