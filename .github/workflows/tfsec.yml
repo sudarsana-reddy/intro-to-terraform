@@ -25,10 +25,9 @@ jobs:
       #     format: sarif
       #     soft_fail: true
 
-      # - name: print current directory
-      #   run: |
-      #     ls -ltr 
-      #     cat tfsec
+      - name: print current directory
+        run: |
+          ls -ltr          
         
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v3
