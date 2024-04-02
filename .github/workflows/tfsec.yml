@@ -27,10 +27,12 @@ jobs:
 
       - name: print current directory
         run: |
-          ls -ltr          
+          ls -ltr 
+          cd tfsec
+          ls -ltr
         
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v3
         with:
           # Path to SARIF file relative to the root of the repository
-          sarif_file: tfsec.sarif      
+          sarif_file: ./tfsec/tfsec.sarif      
