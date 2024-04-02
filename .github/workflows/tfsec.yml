@@ -1,6 +1,7 @@
 name: tfsec
 
 on:
+  push:
   workflow_dispatch:
 
 
