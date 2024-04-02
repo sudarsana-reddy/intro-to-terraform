@@ -28,7 +28,7 @@ jobs:
       - name: print current directory
         run: |
           ls -ltr 
-          cat  tfsec
+          cat tfsec
         
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v3
